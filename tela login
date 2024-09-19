@@ -1,0 +1,39 @@
+packpage br.com.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+
+public class conexaoDAO {
+
+    java.sql.Connection conexao = null;
+
+    String driver = "com.mysql.jdbc.Driver";
+            
+    String url = "jdbc:mysql://localhost:3306/bdaulaeder";
+    String user = "root";
+    String password = "root";
+
+    
+        try {
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(conexaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conexao = DriverManager.getConnection(url, user, password);
+        return conexao;
+
+    }
+    catch (Exception e)
+
+    
+         { 
+    JOptionPane.showMessageDialog(null, "Conexão" = e);
+        return null
+    }
+}
